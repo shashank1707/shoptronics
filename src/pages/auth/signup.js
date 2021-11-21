@@ -35,7 +35,8 @@ function Signup() {
             if (user) {
                 localStorage.setItem('uid', user.id)
                 setLoginState(true);
-                window.dispatchEvent(new Event('storage'))
+                window.dispatchEvent(new Event('storage'));
+                window.location.replace('/');
             }
         });
 

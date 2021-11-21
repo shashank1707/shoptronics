@@ -78,7 +78,7 @@ function Signin() {
                         SIGN IN
                     </Button>
                     OR
-                    <Link to='/signup' style={{ color: '#fff' }}>Register Now</Link>
+                    <Link to='/signup' replace={true} style={{ color: '#fff' }}>Register Now</Link>
                 </Form>
 
             </div>

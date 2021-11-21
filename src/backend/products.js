@@ -70,9 +70,10 @@ const getProduct = async (categoryID, productID) => {
 const updateSoldCount = async (categoryID, productID, quantity) => {
     let product = await getProduct(categoryID, productID);
     const sold = product.sold + quantity;
-
+    const stock = product.stock - quantity;
     await updateDoc(doc(db, `categories/${categoryID}/products`, productID), {
-        sold: sold
+        sold: sold,
+        stock: stock
     })
 }
 
