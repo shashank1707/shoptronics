@@ -123,7 +123,10 @@ function Cart() {
                                 <img src={item.photoURL} className='cart-img' />
                             </div>
                             <div className='cart-data'>
-                                <h5>{item.name}</h5>
+                            <Link to={`product/${item.categoryID}/${item.productID}`} target='_blank' style={{
+                                textDecoration: 'none',
+                                color: 'inherit'
+                            }}><h5>{item.name}</h5></Link>
                                 <div className='price'>{`Rs. ${item.price}`}</div>
                                 <div className='qt-div'>
                                     <div className='qt-btn' onClick={() => updateQuantity(item, index, -1)}>-</div>

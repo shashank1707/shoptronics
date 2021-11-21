@@ -103,7 +103,6 @@
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
-      overflow-y: scroll;
     }
   
     .nav-menu.active {
@@ -113,7 +112,6 @@
       transition: all 0.5s ease;
       z-index: 1;
       padding: 0;
-      overflow-y: scroll;
     }
   
     .nav-links {

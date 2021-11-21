@@ -72,7 +72,7 @@ function WishList() {
         const product = await getProduct(item.categoryID, item.productID);
         if (product.stock <= 0) {
 
-            alert(`${item.name} is out of stock!`);
+            alert(`${item.name} is currently out of stock!`);
             return false;
         }
         return true;
@@ -129,7 +129,10 @@ function WishList() {
                                 <img src={item.photoURL} className='cart-img' />
                             </div>
                             <div className='cart-data'>
-                                <h5>{item.name}</h5>
+                                <Link to={`product/${item.categoryID}/${item.productID}`} target='_blank' style={{
+                                    textDecoration: 'none',
+                                    color: 'inherit'
+                                }}><h5>{item.name}</h5></Link>
                                 <div className='price'>{`Rs. ${item.price}`}</div>
                                 {!checkInCart(item) ? <Button className='cart-btn-w' onClick={() => addToCart(item)}>Add to cart</Button> : <Button className='cart-btn-w' variant='secondary'>Added to cart<i className="fas fa-check" style={{ marginLeft: '10px', color: '#32cd32' }}></i></Button>}
                                 <div className='remove-btn' onClick={() => removeItem(item)}>Remove</div>

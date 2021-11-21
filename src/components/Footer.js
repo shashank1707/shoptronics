@@ -51,7 +51,7 @@ function Footer() {
                             ACCOUNT
                         </div>
                         <Link to='/signin' className='footer-link' >Sign In</Link>
-                        <Link to='.signup' className='footer-link' >Register</Link>
+                        <Link to='/signup' className='footer-link' >Register</Link>
                     </div>
             }
             <div className='footer-col'>

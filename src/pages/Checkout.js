@@ -275,7 +275,7 @@ function Checkout() {
                             return <div className='item'>
                                 <Col style={{ marginTop: '10px' }}>
                                     <div>{index + 1}. {item.name} x {item.quantity}</div>
-                                    <div style={{ marginLeft: '15px', color: '#32cd32' }}>Rs. {item.price}</div>
+                                    <div style={{ marginLeft: '15px', color: '#32cd32' }}>Rs. {item.price * item.quantity}</div>
                                 </Col>
                             </div>
                         })
