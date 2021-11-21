@@ -1,0 +1,31 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 60px;
+    padding: 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #242424;
+    border: solid;
+    border-color: #fff;
+    border-width: 0.1px;
+    box-shadow: 0 6px 20px rgba(255, 2555, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

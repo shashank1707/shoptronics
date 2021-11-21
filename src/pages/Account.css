@@ -1,0 +1,104 @@
+.account {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.side-box {
+    position: sticky;
+    top: 110px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin: 30px 50px;
+    padding: 30px 30px;
+    border-radius: 15px;
+    
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.detail-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #32cd32;
+    cursor: pointer;
+}
+
+.main-box {
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    margin: 30px 50px;
+    padding: 30px 30px;
+    border-radius: 15px;
+    
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+.address {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.personal {
+    margin: 10px 0;
+}
+
+.address-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.name-phone {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+h6 {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 720px) {
+
+    .account {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side-box {
+        position: unset;
+        height: fit-content;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        margin: 30px 50px;
+        padding: 30px 30px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+        -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+        filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    }
+}
