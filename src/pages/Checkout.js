@@ -156,6 +156,7 @@ function Checkout() {
             }
             orders.push(newOrder);
         })
+        user.cart = []
         await updateUserData(uid, user);
         setPaymentStatus(true);
 

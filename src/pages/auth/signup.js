@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Form, Button, Card } from 'react-bootstrap'
+import { Container, Form, Button, Card, Spinner } from 'react-bootstrap'
 import { Redirect } from 'react-router';
 import { isUserLoggedIn } from '../../backend/auth';
 import { createUserDatabase, findUser } from '../../backend/database';
@@ -11,11 +11,15 @@ function Signup() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [buttonLoading, setButtonLoading] = useState(false);
 
     const handleSignup = (e) => {
         e.preventDefault();
+        setButtonLoading(true);
         if (validateEmail() && validatePassword()) {
             signUp();
+        }else{
+            setButtonLoading(false);
         }
     }
 
@@ -38,7 +42,10 @@ function Signup() {
                 window.dispatchEvent(new Event('storage'));
                 window.location.replace('/');
             }
+            setButtonLoading(false);
         });
+
+        
 
     };
 
@@ -79,8 +86,11 @@ function Signup() {
                         <Form.Control.Feedback type='invalid'>Password should be 6 characters long</Form.Control.Feedback>
                     </Form.Group>
 
-                    <Button variant="light" type="submit" className='mb-3' style={{ marginTop: '10px' }}>
-                        SIGN UP
+                    <Button variant="light" type="submit" className='mb-3' style={{ marginTop: '10px', width: 100 }}>
+                    {buttonLoading ? <Spinner
+                        animation="border"
+                        size="sm"
+                      /> : <div>SIGN UP</div>}
                     </Button>
                 </Form>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Form, Button, Card } from 'react-bootstrap'
+import { Container, Form, Button, Card, Spinner } from 'react-bootstrap'
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import { isUserLoggedIn } from '../../backend/auth';
@@ -12,6 +12,7 @@ function Signin() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [buttonLoading, setButtonLoading] = useState(false);
 
     const handleSignin = (e) => {
         e.preventDefault();
@@ -21,6 +22,8 @@ function Signin() {
     }
 
     const signIn = async () => {
+
+        setButtonLoading(true);
 
         const userDetails = {
             email: email,
@@ -39,7 +42,7 @@ function Signin() {
 
         });
 
-
+        setButtonLoading(false);
     };
 
     const validateEmail = () => {
@@ -51,6 +54,7 @@ function Signin() {
         if (password.length >= 6) return true;
         return false;
     }
+
 
     if (loginState) {
         return <Redirect to='/' />
@@ -74,8 +78,11 @@ function Signin() {
                         <Form.Control.Feedback type='invalid'>Password should be 6 characters long</Form.Control.Feedback>
                     </Form.Group>
 
-                    <Button variant="light" type="submit" className='mb-3' style={{ marginTop: '10px' }}>
-                        SIGN IN
+                    <Button variant="light" type="submit" className='mb-3' style={{ marginTop: '10px', width: '100px' }}>
+                        {buttonLoading ? <Spinner
+                            animation="border"
+                            size="sm"
+                          /> : <div>SIGN IN</div>}
                     </Button>
                     OR
                     <Link to='/signup' replace={true} style={{ color: '#fff' }}>Register Now</Link>
