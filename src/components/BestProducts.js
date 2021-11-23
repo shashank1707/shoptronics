@@ -25,7 +25,7 @@ function BestProducts({ type, id }) {
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
             {bestProductList.map((product) => {
-                return <Link style={{textDecoration: 'none'}} to={`/product/${id}/${product.id}`} target='_blank'>
+                return <Link style={{textDecoration: 'none'}} to={`/product/${id}/${product.id}`}>
                 <CardItem
                         src={product.photoURL}
                         text={product.name}

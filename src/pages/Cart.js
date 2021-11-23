@@ -123,7 +123,7 @@ function Cart() {
                                 <img src={item.photoURL} className='cart-img' />
                             </div>
                             <div className='cart-data'>
-                            <Link to={`product/${item.categoryID}/${item.productID}`} target='_blank' style={{
+                            <Link to={`product/${item.categoryID}/${item.productID}`} style={{
                                 textDecoration: 'none',
                                 color: 'inherit'
                             }}><h5>{item.name}</h5></Link>

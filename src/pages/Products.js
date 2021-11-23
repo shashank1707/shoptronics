@@ -72,7 +72,7 @@ function Products() {
             <div className='cards-div'>
             {
                 laptopList.map((product) => {
-                    return <Link style={{textDecoration: 'none'}} to={`/product/${categoryIDs.laptop}/${product.id}`} target='_blank'>
+                    return <Link style={{textDecoration: 'none'}} to={`/product/${categoryIDs.laptop}/${product.id}`}>
                     <CardItem
                             src={product.photoURL}
                             text={product.name}
@@ -118,7 +118,7 @@ function Products() {
             <div className='cards-div'>
             {
                 phoneList.map((product) => {
-                    return <Link style={{textDecoration: 'none'}} to={`/product/${categoryIDs.mobile}/${product.id}`} target='_blank'>
+                    return <Link style={{textDecoration: 'none'}} to={`/product/${categoryIDs.mobile}/${product.id}`}>
                     <CardItem
                             src={product.photoURL}
                             text={product.name}

@@ -88,7 +88,7 @@ function Navbar() {
                 <Link to='/products' className='nav-links' onClick={closeMobileMenu}>Products</Link>
             </li>
             <li className='nav-item'>
-                <Link to='/signin' className='nav-links' target='_blank' onClick={closeMobileMenu}>SIGN IN</Link>
+                <Link to='/signin' className='nav-links' onClick={closeMobileMenu}>SIGN IN</Link>
             </li>
         </ul>
     }
