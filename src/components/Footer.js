@@ -16,7 +16,7 @@ function Footer() {
         }
     })
 
-    const description = 'SHOTRONICS is one of the best places to buy Laptops and Smartphones online.'
+    const description = 'SHOTRONICS is one of the best places to buy Laptops and Smartphones online. We have a large collection of best selling products. Get your device delivered without any extra cost.'
 
 
     return (
