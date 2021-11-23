@@ -20,7 +20,8 @@ function Confirm() {
             }}>Order Placed</h3>
             <div>Thank You For Shopping</div>
             <Link to='/orders'><Button style={{
-                margin: '30px'
+                marginTop: '30px',
+                marginBottom: '30px'
             }}>View Orders</Button></Link>
         </div>
     )
