@@ -16,7 +16,7 @@ function Footer() {
         }
     })
 
-    const description = 'React Hook useEffect has a missing dependency. Either include it or remove the dependency array. React Hook useEffect has a missing dependency. Either include it or remove the dependency array'
+    const description = 'SHOTRONICS is one of the best places to buy Laptops and Smartphones online.'
 
 
     return (
