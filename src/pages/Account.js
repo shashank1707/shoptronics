@@ -76,6 +76,7 @@ function Account() {
         setPhone('');
         setPincode('');
 
+        handleClose();
     }
 
 
@@ -112,7 +113,7 @@ function Account() {
                     </Form.Group>
 
                     <div>
-                        <Button variant="primary" type="submit" style={{ marginRight: '10px', marginTop: '10px' }} onClick={handleClose}>
+                        <Button variant="primary" type="submit" style={{ marginRight: '10px', marginTop: '10px' }}>
                             Save
                         </Button>
                         <Button variant="secondary" style={{ marginRight: '10px', marginTop: '10px' }} onClick={handleClose}>

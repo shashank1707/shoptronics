@@ -93,6 +93,8 @@ function Checkout() {
         setPhone('');
         setPincode('');
 
+        handleClose();
+
     }
 
     const [paymentStatus, setPaymentStatus] = useState(false)
@@ -130,7 +132,7 @@ function Checkout() {
                     </Form.Group>
 
                     <div>
-                        <Button variant="primary" type="submit" style={{ marginRight: '10px', marginTop: '10px' }} onClick={handleClose}>
+                        <Button variant="primary" type="submit" style={{ marginRight: '10px', marginTop: '10px' }}>
                             Save
                         </Button>
                         <Button variant="secondary" style={{ marginRight: '10px', marginTop: '10px' }} onClick={handleClose}>
@@ -178,7 +180,7 @@ function Checkout() {
         }
 
         const options = {
-            "key": "rzp_test_OWwHQ3vX3oZS9X", // Enter the Key ID generated from the Dashboard
+            "key": process.env.RAZOR_PAY_KEY || "rzp_test_OWwHQ3vX3oZS9X", // Enter the Key ID generated from the Dashboard
             "amount": totalPrice * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": userDetails.name,
@@ -245,7 +247,13 @@ function Checkout() {
                     </Row>
 
                     <Row className='total-text'>
-                        <Col><Button style={{ width: '150px' }}  onClick={displayRazorPay}>Pay</Button></Col>
+                        <Col><Button style={{ width: '150px' }}  onClick={() => {
+                            if(Object.keys(userDetails.address).length > 0){
+                                displayRazorPay();
+                            }else{
+                                alert('Provide an address.');
+                            }
+                        }}>Pay</Button></Col>
                     </Row>
                 </Col>
             </div>
