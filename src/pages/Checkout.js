@@ -168,6 +168,7 @@ function Checkout() {
         userDetails.cart.forEach((item) => {
             updateSoldCount(item.categoryID, item.productID, item.quantity)
         })
+        saveOrder();
     }
 
     const displayRazorPay = async () => {
@@ -188,7 +189,6 @@ function Checkout() {
             "image": "https://avatars.githubusercontent.com/u/7713209?s=280&v=4",
             "handler": function (response) {
                 alert(`Payment Successful, Payment id: ${response.razorpay_payment_id}`);
-                saveOrder();
                 updateSold();
             },
             "prefill": {
