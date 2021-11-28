@@ -112,9 +112,19 @@ function Product(props) {
     return (
 
         <div className='product'>
+        <div style={{
+            display: 'flex',
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+        }}>
             <div className='img-col'>
                 <div><img src={productDetails.photoURL} className='product-img' /></div>
             </div>
+            <Button style={{width: '200px', margin: '20px'}} onClick={() => {
+                window.open(productDetails.ytlink)
+            }}>Watch Product Review</Button>
+        </div>
             <div className='product-details'>
                 <div className='product-name'>{productDetails.name}</div>
                 <div className='product-desc'>{productDetails.description}</div>

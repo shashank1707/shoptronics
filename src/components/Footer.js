@@ -16,7 +16,7 @@ function Footer() {
         }
     })
 
-    const description = 'SHOTRONICS is one of the best places to buy Laptops and Smartphones online. We have a large collection of best selling products. Get your device delivered without any extra cost.'
+    const description = 'Shoptronics is one of world’s leading e-commerce websites, having over 500+ million users each month. Looking for a phone? A laptop? Headphones? Shoptronics is the place to be! Browse from over thousands of products from hundreds of brands.';
 
 
     return (
@@ -27,6 +27,7 @@ function Footer() {
                     SHOPTRONICS
                 </div>
                 <p className='footer-details'>{description}</p>
+                <p className='footer-details'>Have a query? Call us anytime on our 24x7 hotline to get your questions answered!</p>
             </div>
 
             <div className='footer-col'>
