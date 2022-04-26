@@ -33,6 +33,7 @@ const signinUser = async (userDetails) => {
             dataList.push(data)
         }
     })
+    if(dataList.length === 0) return null;
     const passwordCheck = await bcrypt.compare(userDetails.password, dataList[0].password);
     if(passwordCheck){
         return dataList[0];
