@@ -3,6 +3,7 @@ import { Container, Form, Button, Card, Spinner } from 'react-bootstrap'
 import { Redirect } from 'react-router';
 import { isUserLoggedIn } from '../../backend/auth';
 import { createUserDatabase, findUser } from '../../backend/database';
+const bcrypt = require('bcryptjs');
 
 function Signup() {
 
@@ -24,11 +25,11 @@ function Signup() {
     }
 
     const signUp = async () => {
-
+        let hashPassword = await bcrypt.hash(password, 10);
         const userDetails = {
             name: name,
             email: email,
-            password: password,
+            password: hashPassword,
             cart: [],
             orders: [],
             wishList: [],

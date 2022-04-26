@@ -1,5 +1,6 @@
 import { getFirestore, collection, getDocs, doc, setDoc, addDoc, query, where} from 'firebase/firestore';
 import app from './firebase';
+const bcrypt = require('bcryptjs');
 
 
 
@@ -19,7 +20,7 @@ const createUserDatabase = async (userDetails) => {
 }
 
 const signinUser = async (userDetails) => {
-    const q = query(collection(db, 'users'), where('email', '==', userDetails.email), where('password', '==', userDetails.password));
+    const q = query(collection(db, 'users'), where('email', '==', userDetails.email));
     const querySnapshot = await getDocs(q);
     var dataList = [];
     querySnapshot.forEach((doc) => {
@@ -32,7 +33,13 @@ const signinUser = async (userDetails) => {
             dataList.push(data)
         }
     })
-    return dataList[0];
+    const passwordCheck = await bcrypt.compare(userDetails.password, dataList[0].password);
+    if(passwordCheck){
+        return dataList[0];
+    }else{
+        return null;
+    }
+    
 }
 
 const findUser = async (email) => {
